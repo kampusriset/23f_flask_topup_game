@@ -1,0 +1,105 @@
+
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #6000ff, #ff00aa, #00e5ff, #00ff6a);
+    background-size: 400% 400%;
+    animation: move 8s infinite;
+    z-index: -1;
+}
+
+@keyframes move {
+    0% { background-position: 0 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0 50%; }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: white;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.active {
+    color: #00eaff;
+}
+
+.container {
+    width: 400px;
+    margin: 80px auto;
+    padding: 25px;
+    background: rgba(0,0,0,0.55);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.title {
+    text-align: center;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.form-box label {
+    color: #c8eaff;
+    font-weight: bold;
+}
+
+.form-box input,
+.form-box select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-size: 15px;
+}
+
+.form-box option {
+    color: black;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background: #00e5ff;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #00a8c6;
+}
+
+.success-box {
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(0,255,136,0.2);
+    backdrop-filter: blur(6px);
+    border-left: 4px solid #00ff88;
+    margin-bottom: 20px;
+    color: white;
+}

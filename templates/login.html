@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<body class="login-bg">
+
+    <div class="login-wrapper">
+
+        <div class="card">
+
+            <img src="{{ url_for('static', filename='img/gambarroblox.png') }}" 
+                 alt="Roblox Avatar" class="avatar">
+
+            <h2>Login</h2>
+
+            <form action="/login" method="POST">
+
+                <label>Username</label>
+                <input type="text" name="username" required>
+
+                <label>Password</label>
+                <input type="password" name="password" required>
+
+                <button type="submit">Login</button>
+
+            </form>
+
+            <p class="register-text">
+                Belum punya akun? <a href="/register">Daftar</a>
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
