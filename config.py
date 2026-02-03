@@ -1,1 +1,2 @@
-SECRET_KEY = "supersecretkey123"
+SECRET_KEY = 'rahasia-super'
+UPLOAD_FOLDER = 'static/uploads'

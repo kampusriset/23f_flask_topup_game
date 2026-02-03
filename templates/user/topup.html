@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Top Up {{ game }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/topup.css') }}">
+</head>
+<body>
+
+<div class="topup-wrapper">
+
+    <div class="topup-header">
+        <h2>Top Up {{ game }}</h2>
+        <p>Proses cepat • Aman • Otomatis</p>
+    </div>
+
+    <form method="POST" 
+      action="{{ url_for('topup') }}" 
+      enctype="multipart/form-data"
+      class="topup-form">
+
+        <!-- GAME -->
+        <input type="hidden" name="game" value="{{ game }}">
+
+        <!-- KHUSUS MOBILE LEGENDS -->
+        {% if game == 'Mobile Legends' %}
+        <div class="row">
+            <div>
+                <label>ID ML</label>
+                <input type="text" name="player_id" placeholder="Contoh: 12345678" required>
+            </div>
+            <div>
+                <label>Server</label>
+                <input type="text" name="server" placeholder="Contoh: 1234" required>
+            </div>
+        </div>
+        {% else %}
+        <label>ID Player</label>
+        <input type="text" name="player_id" placeholder="Masukkan ID Player" required>
+        {% endif %}
+
+        <!-- NOMINAL -->
+        <label>Nominal Top Up</label>
+        <select name="nominal" required>
+            <option value="">-- Pilih Nominal --</option>
+            <option value="50000">50 Diamonds</option>
+            <option value="100000">100 Diamonds</option>
+            <option value="250000">250 Diamonds</option>
+            <option value="500000">500 Diamonds</option>
+        </select>
+
+        <!-- PEMBAYARAN -->
+        <label>Metode Pembayaran</label>
+        <select name="payment" required>
+            <option value="">-- Pilih Metode --</option>
+            <option value="QRIS">QRIS</option>
+            <option value="DANA">DANA</option>
+            <option value="OVO">OVO</option>
+            <option value="GOPAY">GOPAY</option>
+        </select>
+
+        <!-- KONTAK -->
+        <label>No HP / Email (Konfirmasi)</label>
+        <input type="text" name="contact" placeholder="08xxxx / email@gmail.com" required>
+
+        <!-- VOUCHER -->
+        <label>Kode Voucher (Opsional)</label>
+        <input type="text" name="voucher" placeholder="Kosongkan jika tidak ada">
+        
+        <label>Upload Bukti Pembayaran</label>
+        <input type="file" name="proof" accept="image/*" required>
+
+        <button type="submit">💳 Bayar Sekarang</button>
+
+        <p class="secure-note">🔒 Transaksi aman & terenkripsi</p>
+
+    </form>
+
+</div>
+
+</body>
+</html>

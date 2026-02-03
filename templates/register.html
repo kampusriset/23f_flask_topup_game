@@ -1,47 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+    <title>Register | Top Up Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
 </head>
-<body class="login-bg">
+<body>
 
-    <div class="login-wrapper">
+<div class="auth-card">
+    <h3 class="auth-title">REGISTER</h3>
 
-        <div class="card">
+    <form method="post" onsubmit="registerAnim()">
+        <input type="text" name="username"
+               class="form-control auth-input mb-3"
+               placeholder="Username" required>
 
-            <img src="{{ url_for('static', filename='img/gambarroblox.png') }}" 
-                 alt="Roblox Avatar" class="avatar">
+        <input type="password" name="password"
+               class="form-control auth-input mb-3"
+               placeholder="Password" required>
 
-            <h2>Register</h2>
+        <button class="btn-auth" id="btn">CREATE ACCOUNT</button>
+    </form>
 
-            <form action="/register" method="POST">
-
-                <label>Username</label>
-                <input type="text" name="username" required>
-
-                <label>Email</label>
-                <input type="email" name="email" required>
-
-                <label>Password</label>
-                <input type="password" name="password" required>
-
-                <label>Konfirmasi Password</label>
-                <input type="password" name="confirm_password" required>
-
-                <button type="submit">Daftar</button>
-
-            </form>
-
-            <p class="register-text">
-                Sudah punya akun? <a href="/login">Login</a>
-            </p>
-
-        </div>
-
+    <div class="auth-link">
+        Sudah punya akun?
+        <a href="/">Login</a>
     </div>
+</div>
+
+<script>
+function registerAnim() {
+    const btn = document.getElementById('btn');
+    btn.classList.add('loading');
+}
+</script>
 
 </body>
 </html>

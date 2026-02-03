@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Top Up Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="brand">
+        ⚡ KING UCUP
+    </div>
+    <a href="/logout" class="logout-btn">Logout</a>
+</nav>
+
+<header class="hero">
+    <section class="promo-banner">
+    <h2>🎉 PROMO FEBRUARI</h2>
+    <p>Diskon hingga <b>20%</b> • Cashback QRIS • Proses Instan</p>
+</section>
+
+    <h1>🔥 TOP UP GAME</h1>
+    <p>Pilih game favoritmu & top up instan</p>
+</header>
+
+<section class="game-grid">
+
+    <a href="/topup?game=Free Fire" class="game-card">
+        <img src="{{ url_for('static', filename='img/ff.jpg') }}">
+        <span>Free Fire</span>
+    </a>
+
+    <a href="/topup?game=Mobile Legends" class="game-card">
+        <img src="{{ url_for('static', filename='img/mlbb.jpg') }}">
+        <span>Mobile Legends</span>
+    </a>
+
+    <a href="/topup?game=Valorant" class="game-card">
+        <img src="{{ url_for('static', filename='img/valoranlogo.jpg') }}">
+        <span>Valorant</span>
+    </a>
+
+    <a href="/topup?game=Genshin Impact" class="game-card">
+        <img src="{{ url_for('static', filename='img/logogenshin.jpeg') }}">
+        <span>Genshin Impact</span>
+    </a>
+
+    <a href="/topup?game=Roblox" class="game-card">
+        <img src="{{ url_for('static', filename='img/roblox_bg.jpg') }}">
+        <span>Roblox</span>
+    </a>
+
+</section>
+
+</body>
+</html>
